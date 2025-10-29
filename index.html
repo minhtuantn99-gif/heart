@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trái Tim Của Lý Tuân - Hoàn Hảo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000;
+            overflow: hidden; /* Quan trọng để ẩn đi các lỗi nhỏ nếu có */
+        }
+
+        .heart {
+            position: relative;
+            /* Đã điều chỉnh kích thước để khớp hơn */
+            width: 200px;
+            height: 180px; /* Thấp hơn một chút so với width */
+            background-color: red;
+            transform: rotate(-45deg);
+            /* Box-shadow chính cho toàn bộ trái tim, để tạo hiệu ứng phát sáng mượt mà */
+            box-shadow: 0 0 60px red, 0 0 30px red; /* Cải thiện hiệu ứng phát sáng */
+            animation: pulse 1.5s infinite; /* Animation đập */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            /* Điều chỉnh kích thước hình tròn cho phù hợp */
+            width: 200px;
+            height: 200px; 
+            background-color: red;
+            border-radius: 50%;
+            /* Không cần box-shadow riêng cho hình tròn nữa, vì .heart đã có rồi */
+        }
+
+        .heart::before {
+            /* Điều chỉnh vị trí hình tròn trên */
+            top: -100px; /* Bằng một nửa chiều cao của hình tròn */
+            left: 0;
+        }
+
+        .heart::after {
+            /* Điều chỉnh vị trí hình tròn bên phải */
+            left: 100px; /* Bằng một nửa chiều rộng của hình tròn */
+            top: 0;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.15) rotate(-45deg);
+            }
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+        }
+
+        .message {
+            margin-top: 100px;
+            font-size: 2.5em;
+            color: #fff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff; /* Tăng cường hiệu ứng phát sáng cho chữ */
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart"></div>
+
+    <p class="message">a yêu em</p>
+
+</body>
+</html>
